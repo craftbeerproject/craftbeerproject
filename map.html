@@ -1,0 +1,29 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <div id="hongkongmap">
+
+
+
+
+
+        <script src="js/echarts.min.js"></script>
+        <script src="js/xianggang.js"></script>
+        <script>
+            var chart = echarts.init(document.getElementById('hongkongmap'));
+            chart.setOption({
+                series: [{
+                    type: 'map',
+                    map: 'hong kong'
+                }]
+            });
+        </script>
+    </div>
+
+</body>
+
+</html>
