@@ -1,6 +1,9 @@
 app.title = '坐标轴刻度与标签对齐';
 
 option = {
+    title: {
+        text: 'The Sale Volume of different brands',
+        },
     color: ['#3398DB'],
     tooltip : {
         trigger: 'axis',
@@ -30,7 +33,7 @@ option = {
     ],
     series : [
         {
-            name:'直接访问',
+            name:'sale volume',
             type:'bar',
             barWidth: '60%',
             data:[1763, 1681, 1575, 1396, 1105, 897, 528,502,446,98,4]
