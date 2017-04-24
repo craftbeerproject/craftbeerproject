@@ -2,7 +2,7 @@ app.title = '坐标轴刻度与标签对齐';
 
 option = {
     title: {
-        text: 'The Profit rate of different brands',
+        text: 'The Profit Margin of different brands',
         },
     color: ['#3398DB'],
     tooltip : {
@@ -33,7 +33,7 @@ option = {
     ],
     series : [
         {
-            name:'profit rate',
+            name:'profit margin',
             type:'bar',
             barWidth: '60%',
             data:[165, 115, 171, 18, 171, 123, 202,129,148,149,254]
