@@ -180,7 +180,7 @@ http://www.tooplate.com/view/2080-minimax
                                     emphasis: {
                                         show: true,
                                         textStyle: {
-                                            fontSize: '30',
+                                            fontSize: '15',
                                             fontWeight: 'bold'
                                         }
                                     }
@@ -220,8 +220,61 @@ http://www.tooplate.com/view/2080-minimax
         <div class="container">
             <div class="row">
                 <div class="col-md-1 col-sm-1"></div>
-                <div class="col-md-5 col-sm-5" id="chart2" style="width: 500px;height:200px;">
-
+                <div class="col-md-5 col-sm-5" id="chart2" style="width: 500px;height:300px;">
+<script type="text/javascript">
+                        var myChart = echarts.init(document.getElementById('chart2'));
+                        var option = {
+    title: {
+        text:'Top 5 Sale Volume Brands of Hop Leaf'
+        
+    },
+    color: ['#3d97d3'],
+    tooltip : {
+        trigger: 'item',
+        formatter: "Top 5 sale volume:{b} "
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis : [
+        {
+            type : 'category',
+            data : ['Tuatara', 'North Coast', 'Stone', 'Kagua', 'Baird'],
+            axisTick: {
+                alignWithLabel: true
+            }
+        }
+    ],
+    yAxis : [
+      {
+            show: false}
+       
+    ],
+    series : [
+        {
+            name:'sale',
+            type:'bar',
+            barWidth: '60%',
+             itemStyle: {
+                            normal: {
+                                color: function (params) {
+                                    var colorList = [
+                                      '#c23531','#2f4554', '#61a0a8', '#d48265', '#91c7ae','#749f83',  '#ca8622', '#bda29a','#6e7074', '#546570', '#c4ccd3'
+                                    ];
+                                    return colorList[params.dataIndex]
+                                },
+                                
+                            }
+                        },
+            data:[176, 168, 158, 140, 111]
+        }
+    ]
+};
+myChart.setOption(option)
+                    </script>
                 </div>
                 <div class="col-md-5 col-sm-5">
                     <p>The company started from a word-of-mouth promotion with friends at the first place.
@@ -306,6 +359,7 @@ http://www.tooplate.com/view/2080-minimax
                             associated with dark beer, rather than just strong beer.
                         </p>
                     </div>
+                    <div class="col-md-12 col-sm-12" id="chart3" style="width: 500px;height:300px;">
                     <div class="col-md-12 col-sm-12" style="padding-top: 30px;text-align: justify">
                         <p>As observed by Mr Boda, who has been dealing with craft beer for more than twenty years, Hong Kong’s craft beer market scale and drinking history is probably the same as those of Thailand, Singapore and South Korea, but behind
                             Japan: “Japan has a lot more importers and a much broader variety. It also has twenty times the number of people that’s been enjoying craft beer for a good ten, fifteen years longer than us.” But at the same time, customers
@@ -369,7 +423,7 @@ http://www.tooplate.com/view/2080-minimax
 
             <!-- copyright section -->
             <div class="copyright">
-                <div class="container">
+                <div class="container" style:"width: 1000px; height:20px">
                     <div class="row">
                         <div class="col-md-12 col-sm-12">
                             <p>Copyright &copy; 2017<a rel="nofollow" href="http://www.tooplate.com" target="_parent">Tooplate</a></p>
