@@ -123,7 +123,7 @@ img:hover {
 /* home section */
 
 #home {
-    background-image: url(" https://s22.postimg.org/jw17tds6p/beerbottles.jpg ")no-repeat;
+    background: url("../images/home.jpg ")no-repeat;
     background-size: cover;
     background-position: center;
     min-height: 900px;
