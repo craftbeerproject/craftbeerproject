@@ -1,39 +1,51 @@
-app.title = '坐标轴刻度与标签对齐';
+app.title = '环形图';
 
 option = {
-    title: {
-        text: 'The Profit Margin of different brands',
+     title: {
+        text: 'Top 5 Profit Margin Brands of Hop Leaf',
+        textaligh:'right'
         },
-    color: ['#3398DB'],
-   
- 
-    grid: {
-        left: '3%',
-        right: '4%',
-        bottom: '3%',
-        containLabel: true
-    },
-    xAxis : [
-        {
-            type : 'category',
-            data : ['Stone', 'To Ol', 'Kagua', 'Tuatara', 'North Coast', 'Mikkeller', 'Deschutes','Baird','Anderson Valley','Epic','Nogne'],
-            axisTick: {
-                alignWithLabel: true
-            }
-        }
-    ],
-    yAxis : [
         
-         {
-             show :  false
-         },
-    ],
-    series : [
+    tooltip: {
+        trigger: 'item',
+        formatter: "Profit Margin top 5：{b}"
+    },
+    legend: {
+        orient: 'vertical',
+        x: 'right',
+        data:['Stone', 'Kagua', 'North Coast', 'Deschutes','Nogne']
+    },
+    series: [
         {
-            name:'profit margin',
-            type:'bar',
-            barWidth: '60%',
-            data:[165, 115, 171, 18, 171, 123, 202,129,148,149,254]
+            name:'',
+            type:'pie',
+            radius: ['50%', '70%'],
+            avoidLabelOverlap: false,
+            label: {
+                normal: {
+                    show: false,
+                    position: 'center'
+                },
+                emphasis: {
+                    show: true,
+                    textStyle: {
+                        fontSize: '30',
+                        fontWeight: 'bold'
+                    }
+                }
+            },
+            labelLine: {
+                normal: {
+                    show: false
+                }
+            },
+            data:[
+                {value:165, name:'Stone'},
+                {value:171, name:'Kagua'},
+                {value:171, name:'North Coast'},
+                {value:202, name:'Deschutes'},
+                {value:254, name:'Nogne'}
+            ]
         }
-    ]
+    ] 
 };
