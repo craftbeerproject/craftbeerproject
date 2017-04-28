@@ -124,7 +124,7 @@ http://www.tooplate.com/view/2080-minimax
             <div class="row">
                 <div class="col-md-12 col-sm-12">
                     <div class="title">
-                        <h2>Geographical Distribution of Consumers</h2>
+                        <h2>Hong Kong's Market Preferences</h2>
                     </div>
                 </div>
             </div>
@@ -136,12 +136,66 @@ http://www.tooplate.com/view/2080-minimax
     <div class="container">
         <div class="row">
             <div class="col-md-1 col-sm-1"></div>
-            <div class="col-md-10 col-sm-10">
+             <div class="col-md-5 col-sm-5">
                  <p>To maintain the good quality of the fresh produced beers during the shipment and logistics, Hop Leaf works directly with the breweries: “We don’t buy from third parties because we don’t know the quality of the beer, how it’s been handle, how long it’s been there, how they shipped,” said the general manager.
                 </p>
                 <p>Also, “we take better care than anybody else: There’s not many people that are refrigerating their beers like we do. There’re no people that refrigerating their kegs like we do. And customers will certainly notice that when they taste it, when a beer tastes like it should be fresh, and flavourful, and not fried like other people’s beers.”
 			    </p>
-                <hr>
+            </div>
+            <div class="col-md-5 col-sm-5" id="chart1" style="width: 500px;height:200px;">
+                <script type="text/javascript">
+        var myChart = echarts.init(document.getElementById('chart1'));
+           var option = {
+     title: {
+        text: 'Top 5 Profit Margin Brands of Hop Leaf',
+        textaligh:'right'
+        },
+        
+    tooltip: {
+        trigger: 'item',
+        formatter: "Profit Margin top 5：{b}"
+    },
+    legend: {
+        orient: 'vertical',
+        x: 'right',
+        data:['Stone', 'Kagua', 'North Coast', 'Deschutes','Nogne']
+    },
+    series: [
+        {
+            name:'',
+            type:'pie',
+            radius: ['50%', '70%'],
+            avoidLabelOverlap: false,
+            label: {
+                normal: {
+                    show: false,
+                    position: 'center'
+                },
+                emphasis: {
+                    show: true,
+                    textStyle: {
+                        fontSize: '30',
+                        fontWeight: 'bold'
+                    }
+                }
+            },
+            labelLine: {
+                normal: {
+                    show: false
+                }
+            },
+            data:[
+                {value:165, name:'Stone'},
+                {value:171, name:'Kagua'},
+                {value:171, name:'North Coast'},
+                {value:202, name:'Deschutes'},
+                {value:254, name:'Nogne'}
+            ]
+        }
+    ] 
+};
+myChart.setOption(option)
+              </script>      
             </div>
             <div class="col-md-1 col-sm-1"></div>
         </div>
@@ -152,7 +206,10 @@ http://www.tooplate.com/view/2080-minimax
     <div class="container">
         <div class="row">
             <div class="col-md-1 col-sm-1"></div>
-            <div class="col-md-10 col-sm-10">
+             <div class="col-md-5 col-sm-5" id="chart2" style="width: 500px;height:200px;">
+                    
+            </div>
+            <div class="col-md-5 col-sm-5">
                 <p>The company started from a word-of-mouth promotion with friends at the first place. 
                 </p>
                 <p>Now it has earned its own place on the market by filling the niche and need of better beer from customers: “Specifically for the beers like Carlsberg, or Blue girls or Qingdao or anything is simple, (what makes craft beer different) is quality. It tastes much better, it’s a much broader variety and as I always say, it’s “affordable luxury”. If you wanna buy a decent bottle of wine in a restaurant, it’s probably gonna cost you at least four or five hundred dollars. You can get a great bottle of beer in the restaurant for 60 dollars on special. That’s the first thing we emphasise. If you’re a good restaurant serving good food you should be serving good beers also,” said Mr. Benusa.
@@ -206,7 +263,9 @@ http://www.tooplate.com/view/2080-minimax
                  <div class="col-md-4 col-sm-4">
                     <img src="images/lager.jpg" style="width:250px; height:250px">
                     <h3>Pilsner / Lager</h3>
-                    <p>
+                    <p> Lager is a type of beer that is conditioned at low temperatures, normally at the brewery. It may be pale, golden, amber, or dark.
+                    </p>
+                    <p>In the United Kingdom, the term lager commonly refers specifically to pale lagers, many of which are derived from the Pilsner style. Worldwide, pale lager is the most widely consumed and commercially available style of beer. It is often known primarily by its brand name, and labeled simply as "beer". Well-known brands include Heineken, Carling, Foster's, and Carlsberg.
                     </p>              
                 </div>
                 <div class="col-md-4 col-sm-4">
@@ -222,7 +281,7 @@ http://www.tooplate.com/view/2080-minimax
                     <h3>Stout</h3>
                     <p>Stout,  traditionally the generic term for the strongest or stoutest porters, is a dark beer made using roasted malt or roasted barley, hops, water and yeast. 
                     </p>
-                    <p>The first known use of the word stout for beer was in a document dated 1677. The name porter was first used in 1721 to describe a dark brown beer that had been made with roasted malts. Because of the huge popularity of porters, brewers made them in a variety of strengths. The stronger beers were called "stout porters", so the history and development of stout and porter are intertwined, and the term stout has become firmly associated with dark beer, rather than just strong beer.
+                    <p>The first known use of the word stout for beer was in a document dated 1677. The stronger beers were called "stout porters", so the history and development of stout and porter are intertwined, and the term stout has become firmly associated with dark beer, rather than just strong beer.
                     </p>
                </div>
                  <div class="col-md-12 col-sm-12" style="text-align:left">
@@ -254,17 +313,17 @@ Mr. Boda plans to expand the business and make more beer brands available in thi
                 <div class="col-md-4 col-sm-6">
                     <img src="images/Gloria.gif" class="img-responsive" alt="team img">
                     <h3>Gloria Song</h3>
-                    <h4>Financial Journalism</h4>
+                    <h4>Financial Journalism student</h4>
                 </div>
                 <div class="col-md-4 col-sm-6">
                     <img src="images/Julianna.gif" class="img-responsive" alt="team img">
-                    <h3>Julianna Wu</h3>
-                    <h4>International Journalism</h4>
+                    <h3><a href="juliannawqy.wordpress.com">Julianna Wu</a></h3>
+                    <h4>International Journalism student</h4>
                 </div>
                 <div class="col-md-4 col-sm-6">
                     <img src="images/Mary.gif" class="img-responsive" alt="team img">
                     <h3>Mary Ma</h3>
-                    <h4>Journalism</h4>
+                    <h4>Journalism student</h4>
                 </div>
             </div>
         </div>
