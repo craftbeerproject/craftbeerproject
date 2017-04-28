@@ -2,11 +2,9 @@ option = {
     title: {
         text: 'sales trends of different Beer Style'
     },
-    tooltip: {
-        trigger: 'axis'
-    },
+   
     legend: {
-        data:['Stout','IPA','Ale','Belgain','Pale Ale','Variety Pack','Wheat','Fruity']
+        data:['Stout','IPA','Ale','Pale Ale','Fruity']
     },
     grid: {
         left: '3%',
@@ -25,7 +23,7 @@ option = {
         data: ['2016.03','2016.04','2016.05','2016.06','2016.07','2016.08','2016.09','2016.10','2016.11','2016.12','2017.01','2017.02','2017.03']
     },
     yAxis: {
-        type: 'value'
+        show: false
     },
     series: [
         {
@@ -46,30 +44,15 @@ option = {
             stack: '总量',
             data:[59,57,76,40,21,12,45,62,58,50,41,62,21]
         },
-        {
-            name:'Belgain',
-            type:'line',
-            stack: '总量',
-            data:[17, 4, 27, 16,12, 61, 55,36,30,27,57,49,24]
-        },
+       
         {
             name:'Pale Ale',
             type:'line',
             stack: '总量',
             data:[92, 102, 98, 77, 31, 18, 22,24,34,24,20,35]
         },
-          {
-            name:'Variety Pack',
-            type:'line',
-            stack: '总量',
-            data:[10, 3, 4, 3, 2, 4, 6,12,12,7,20,35]
-        },
-          {
-            name:'Wheat',
-            type:'line',
-            stack: '总量',
-            data:[15, 9, 6, 9, 18, 35, 31,17,22,13,10,13,24]
-        },
+         
+        
           {
                 name:'Fruity',
             type:'line',
