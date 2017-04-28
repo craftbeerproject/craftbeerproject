@@ -3,38 +3,150 @@
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <script src="js/echarts.min.js"></script>
 </head>
 
 
 <body>
-    <div id="hongkongmap">
+    <div id="hongkongmap" style="width: 800px;height:400px;"></div>
 
-        <script>
-            $.get('js/xianggang.json', function(chinaJson) {
-                echarts.registerMap('hong kong', chinaJson);
-                var chart = echarts.init(document.getElementById('hongkongmap'));
-                chart.setOption({
-                    series: [{
-                        type: 'map',
-                        map: 'hong kong'
-                    }]
-                });
-            });
-        </script>
+    <script>
+        var myMap = echarts.init(document.getElementById('hongkongmap'));
+        var uploadedDataURL = "xianggang.json";
+        myMap.showLoading();
+        $.getJSON(uploadedDataURL, function(geoJson) {
+            myMap.hideLoading();
+            echarts.registerMap('HK', geoJson);
 
+            myMap.setOption(option = {
 
+                title: {
+                    text: 'Geographical distribution of Customers',
 
-    </div>
+                },
+                tooltip: {
+                    trigger: 'item',
+                    formatter: '{b}<br/>{c} (%)'
+                },
+                toolbox: {
+                    show: true,
+                    orient: 'vertical',
+                    x: 'right',
+                    y: 'center',
+                    feature: {
+                        mark: {
+                            show: true
+                        },
+                        dataView: {
+                            show: true,
+                            readOnly: false
+                        },
+                        restore: {
+                            show: true
+                        },
+                        saveAsImage: {
+                            show: true
+                        }
+                    }
+                },
+                visualMap: {
+                    min: 0.01,
+                    max: 50,
+                    text: ['High', 'Low'],
+                    realtime: false,
+                    calculable: true,
+                    color: ['orangered', 'yellow', 'lightskyblue']
+                },
+                series: [{
+                    name: 'Geographical distribution of Customers',
+                    type: 'map',
+                    mapType: 'HK', // 自定义扩展图表类型
+                    itemStyle: {
+                        normal: {
+                            label: {
+                                show: true
+                            }
+                        },
+                        emphasis: {
+                            label: {
+                                show: true
+                            }
+                        }
+                    },
+                    data: [{
+                        name: 'Central and Western',
+                        value: 40.34
+                    }, {
+                        name: 'Eastern',
+                        value: 4.33
+                    }, {
+                        name: 'Islands',
+                        value: 6.39
+                    }, {
+                        name: 'Kowloon City',
+                        value: 1.68
+                    }, {
+                        name: 'Kwai Tsing',
+                        value: 2.51
+                    }, {
+                        name: 'Kwun Tong',
+                        value: 1.93
+                    }, {
+                        name: 'North',
+                        value: 1.85
+                    }, {
+                        name: 'Sai Kung',
+                        value: 3.08
+                    }, {
+                        name: 'Sha Tin',
+                        value: 2.81
+                    }, {
+                        name: 'Sham Shui Po',
+                        value: 1.25
+                    }, {
+                        name: 'Southern',
+                        value: 6.17
+                    }, {
+                        name: 'Tai Po',
+                        value: 0.29
+                    }, {
+                        name: 'Tsuen Wan',
+                        value: 0.53
+                    }, {
+                        name: 'Tuen Mun',
+                        value: 1.6
+                    }, {
+                        name: 'Wan Chai',
+                        value: 13.98
+                    }, {
+                        name: 'Wong Tai Sin',
+                        value: 3.22
+                    }, {
+                        name: 'Yau Tsim Mong',
+                        value: 6.05
+                    }, {
+                        name: 'Yuen Long',
+                        value: 1.34
+                    }],
+                    // 自定义名称映射
+
+                    // 文本位置修正
+                    textFixed: {
+                        'Yau Tsim Mong': [-30, 0],
+                        'Wan Chai': [0, 10],
+                        'Central and Western': [-20, -5],
+                        'Eastern': [10, 0]
+                    },
+                    // 文本直接经纬度定位
+                    geoCoord: {
+                        'Islands': [113.95, 22.26]
+                    }
+                }]
+            })
+        })
+    </script>
+
 
 </body>
 
